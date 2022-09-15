@@ -48,6 +48,6 @@ This can be verified by using the R `Sys.getenv()` function.
 ```
 
 ### Publish a Shiny app
-
+<img src="https://github.com/lagerratrobe/connect_examples/raw/main/shiny_app_example.png" width="500" />
   * app code in `R/shiny`
   * publish with `publish_shiny_app.R` script
