@@ -8,7 +8,7 @@ row.names(df) <- NULL
 
 # Define shiny layout
 ui <- fluidPage(
-  titlePanel("mtcars shiny example"),
+  titlePanel("Shiny R Example"),
   sidebarLayout(
     sidebarPanel(
       selectInput(inputId = "num_cyl",
