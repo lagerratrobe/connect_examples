@@ -12,7 +12,7 @@
   "packages": {
     "R6": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "R6",
         "Title": "Encapsulated Classes with Reference Semantics",
@@ -36,7 +36,7 @@
     },
     "Rcpp": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "Rcpp",
         "Title": "Seamless R and C++ Integration",
@@ -61,7 +61,7 @@
     },
     "askpass": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "askpass",
         "Type": "Package",
@@ -89,7 +89,7 @@
     },
     "bit": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "bit",
         "Type": "Package",
@@ -117,7 +117,7 @@
     },
     "bit64": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "bit64",
         "Type": "Package",
@@ -145,7 +145,7 @@
     },
     "cli": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "cli",
         "Title": "Helpers for Developing Command Line Interfaces",
@@ -173,7 +173,7 @@
     },
     "config": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "config",
         "Type": "Package",
@@ -201,7 +201,7 @@
     },
     "connectapi": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Type": "Package",
         "Package": "connectapi",
@@ -229,7 +229,7 @@
     },
     "crayon": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "crayon",
         "Title": "Colored Terminal Output",
@@ -255,7 +255,7 @@
     },
     "curl": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "curl",
         "Type": "Package",
@@ -284,7 +284,7 @@
     },
     "digest": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "digest",
         "Author": "Dirk Eddelbuettel <edd@debian.org> with contributions \n by Antoine Lucas, Jarek Tuszynski, Henrik Bengtsson, Simon Urbanek,\n Mario Frasca, Bryan Lewis, Murray Stokely, Hannes Muehleisen,\n Duncan Murdoch, Jim Hester, Wush Wu, Qiang Kou, Thierry Onkelinx, \n Michel Lang, Viliam Simko, Kurt Hornik, Radford Neal, Kendon Bell,\n Matthew de Queljoe, Ion Suruceanu, Bill Denney, Dirk Schumacher,\n and Winston Chang.",
@@ -309,7 +309,7 @@
     },
     "dplyr": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Type": "Package",
         "Package": "dplyr",
@@ -340,7 +340,7 @@
     },
     "ellipsis": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "ellipsis",
         "Version": "0.3.2",
@@ -366,7 +366,7 @@
     },
     "fansi": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "fansi",
         "Title": "ANSI Control Sequence Aware String Functions",
@@ -394,7 +394,7 @@
     },
     "fs": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "fs",
         "Title": "Cross-Platform File System Operations Based on 'libuv'",
@@ -425,7 +425,7 @@
     },
     "generics": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "generics",
         "Title": "Common S3 Generics not Provided by Base R Methods Related to\nModel Fitting",
@@ -452,7 +452,7 @@
     },
     "glue": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "glue",
         "Title": "Interpreted String Literals",
@@ -482,7 +482,7 @@
     },
     "hms": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "hms",
         "Title": "Pretty Time of Day",
@@ -509,7 +509,7 @@
     },
     "httpuv": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "httpuv",
         "Type": "Package",
@@ -539,7 +539,7 @@
     },
     "httr": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "httr",
         "Title": "Tools for Working with URLs and HTTP",
@@ -567,7 +567,7 @@
     },
     "jsonlite": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "jsonlite",
         "Version": "1.8.0",
@@ -593,7 +593,7 @@
     },
     "later": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "later",
         "Type": "Package",
@@ -622,7 +622,7 @@
     },
     "lifecycle": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "lifecycle",
         "Title": "Manage the Life Cycle of your Package Functions",
@@ -650,7 +650,7 @@
     },
     "magrittr": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Type": "Package",
         "Package": "magrittr",
@@ -679,7 +679,7 @@
     },
     "mime": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "mime",
         "Type": "Package",
@@ -704,7 +704,7 @@
     },
     "openssl": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "openssl",
         "Type": "Package",
@@ -732,7 +732,7 @@
     },
     "packrat": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "packrat",
         "Type": "Package",
@@ -759,7 +759,7 @@
     },
     "pillar": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "pillar",
         "Title": "Coloured Formatting for Columns",
@@ -791,7 +791,7 @@
     },
     "pkgconfig": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "pkgconfig",
         "Title": "Private Configuration for 'R' Packages",
@@ -815,7 +815,7 @@
     },
     "plumber": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Encoding": "UTF-8",
         "Package": "plumber",
@@ -848,7 +848,7 @@
     },
     "prettyunits": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "prettyunits",
         "Title": "Pretty, Human Readable Formatting of Quantities",
@@ -872,7 +872,7 @@
     },
     "progress": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "progress",
         "Title": "Terminal Progress Bars",
@@ -897,7 +897,7 @@
     },
     "promises": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "promises",
         "Type": "Package",
@@ -927,7 +927,7 @@
     },
     "purrr": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "purrr",
         "Title": "Functional Programming Tools",
@@ -955,7 +955,7 @@
     },
     "rlang": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "rlang",
         "Version": "1.0.3",
@@ -987,7 +987,7 @@
     },
     "rsconnect": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "rsconnect",
         "Type": "Package",
@@ -1014,7 +1014,7 @@
     },
     "rstudioapi": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "rstudioapi",
         "Title": "Safely Access the RStudio API",
@@ -1039,7 +1039,7 @@
     },
     "sodium": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "sodium",
         "Type": "Package",
@@ -1064,7 +1064,7 @@
     },
     "stringi": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "stringi",
         "Version": "1.7.6",
@@ -1093,7 +1093,7 @@
     },
     "swagger": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "swagger",
         "Type": "Package",
@@ -1119,7 +1119,7 @@
     },
     "sys": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "sys",
         "Type": "Package",
@@ -1146,7 +1146,7 @@
     },
     "tibble": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "tibble",
         "Title": "Simple Data Frames",
@@ -1179,7 +1179,7 @@
     },
     "tidyselect": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "tidyselect",
         "Title": "Select from a Set of Strings",
@@ -1208,7 +1208,7 @@
     },
     "utf8": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "utf8",
         "Title": "Unicode Text Processing",
@@ -1234,7 +1234,7 @@
     },
     "uuid": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "uuid",
         "Version": "1.1-0",
@@ -1255,7 +1255,7 @@
     },
     "vctrs": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "vctrs",
         "Title": "Vector Helpers",
@@ -1286,7 +1286,7 @@
     },
     "webutils": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "webutils",
         "Type": "Package",
@@ -1311,7 +1311,7 @@
     },
     "yaml": {
       "Source": "CRAN",
-      "Repository": "https://ftp.osuosl.org/pub/cran",
+      "Repository": "https://cran.rstudio.com/",
       "description": {
         "Package": "yaml",
         "Type": "Package",
@@ -1338,7 +1338,7 @@
       "checksum": "17dc4cef04be1ee8c8ba7c36861e455c"
     },
     "publish_plumber_api.R": {
-      "checksum": "906cb1130b4f979a7abb74f90a29aacf"
+      "checksum": "bec52b4561c03aaa7c267da05740803a"
     }
   },
   "users": null

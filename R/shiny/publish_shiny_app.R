@@ -10,9 +10,7 @@ client <- connect(
 
 # Create a manifest file for specify app
 rsconnect::writeManifest(appDir = "R/shiny",
-                         appFiles = "R/shiny/app.R",
                          appPrimaryDoc = "app.R",
-                         contentCategory = "site",
                          verbose = TRUE)
 
 # Create a .tar.gz to use as bundle

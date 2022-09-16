@@ -11,9 +11,6 @@ client <- connect(
 
 # Create a manifest file for specify app
 rsconnect::writeManifest(appDir = "R/plumber",
-                         appFiles = "R/plumber/plumber.R",
-                         appPrimaryDoc = "plumber.R",
-                         contentCategory = "api",
                          verbose = TRUE)
 
 # Create a .tar.gz to use as bundle

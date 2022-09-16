@@ -53,3 +53,41 @@ This can be verified by using the R `Sys.getenv()` function.
   * publish with `publish_shiny_app.R` script
 
 <img src="https://github.com/lagerratrobe/connect_examples/raw/main/shiny_app_example.png" width="500" />
+
+### Publish a Plumber API
+
+  * app code in `R/plumber`
+  * publish with `R/publish_plumber_api.R`
+  
+Once published, if the vanity URL is changed to "plumber" then the following request:
+
+```
+http://3.144.138.21/plumber/cars?cyl=4
+```
+
+Should return:
+
+```
+[
+    {
+        "cyl": 4,
+        "mpg": 22.8,
+        "model": "Datsun 710"
+    },
+    {
+        "cyl": 4,
+        "mpg": 24.4,
+        "model": "Merc 240D"
+    },
+    {
+        "cyl": 4,
+        "mpg": 22.8,
+        "model": "Merc 230"
+    },
+    {
+        "cyl": 4,
+        "mpg": 32.4,
+        "model": "Fiat 128"
+    },
+<snip> Truncated for readability
+```
