@@ -1,6 +1,10 @@
 # Shiny {.unnumbered}
 
-The easiest way to publish a shiny app is to use the Rstudio IDE, either from the desktop version or one of the server based products like Workbench or RStudio Server.  All have built-in examples of a simple Shiny application, "Old Faithful Geyser Data", that can be created by choosing "File", "New file", "Shiny Web App" and then be published using the IDE's built-in "Publish" button. 
+The easiest way to publish a shiny app is via the Rstudio IDE, either using the desktop version or one of the server based products like Workbench or RStudio Server.  All have built-in examples of a simple Shiny application, "Old Faithful Geyser Data", that can be created by choosing "File", "New file", "Shiny Web App" and then be published using the IDE's built-in "Publish" button. 
+
+### Prerequisites
+
+* Must have `shiny` R package installed
 
 ### Create app and Test Locally {.numbered}
 
