@@ -1,0 +1,16 @@
+# Evolution and Formats {.unnumbered}
+
+RStudio Connect is an enterprise level publishing platform for interactive dashboards, applications, reports and APIs.  In 2014, when RStudio  released Shiny Server Pro v1.1, it had support for 2 types of content - Shiny and RMarkdown, both of which could only be worked on in R.  Now, in the current version of Connect, 2022.09.0, almost a dozen different content formats can be published from both R and Python.  
+
+_[I hate the way this table looks right now, but I've wasted too much time already just getting it in - Roger]_
+```{r echo=FALSE, message=FALSE}
+#| label: format_tbl
+#| tbl-cap: "Formats"
+
+library(dplyr)
+df <- read.so::read.md("supported_format.md")
+
+knitr::kable(df, align = "l") %>% kableExtra::kable_styling(position = "left")
+```
+
+_NOTE: Connect Versions prior to 1.1 existed, but are not relevant to this guide._

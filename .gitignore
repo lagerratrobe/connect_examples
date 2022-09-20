@@ -40,6 +40,14 @@ vignettes/*.pdf
 
 # R Project junk
 *.Rproj
+rsconnect*
 
 # Git junk
 README.html
+
+# Quarto
+_book*
+.quarto/
+.DS_Store
+
+/.quarto/

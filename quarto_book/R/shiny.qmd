@@ -1,0 +1,47 @@
+# Shiny {.unnumbered}
+
+The easiest way to publish a shiny app is to use the Rstudio IDE, either from the desktop version or one of the server based products like Workbench or RStudio Server.  All have built-in examples of a simple Shiny application, "Old Faithful Geyser Data", that can be created by choosing "File", "New file", "Shiny Web App" and then be published using the IDE's built-in "Publish" button. 
+
+### Create app and Test Locally {.numbered}
+
+1. Create a new Shiny Web App, we named ours, "Shiny_Example".
+
+<img src="shiny/images/1_shiny_app_create.png" width="500" />
+
+<img src="shiny/images/2_shiny_app_name.png" width="500" />
+
+This should create a new folder named "Shiny Example" that contains a file named "app.R" which will open automatically in the IDE.  RStudio should also recognize that this is a Shiny app and a "Run App" button will be visible on the right side of the editing pane.
+
+2. Verify that "Run in Viewer Pane" is selected in the "Run App" dropdown.
+
+<img src="shiny/images/3_shiny_run_app.png" width="500"/>
+
+3. Press the "Run App" button and you should see "Old Faithful Geyser Data" displayed in the Viewer Pane on the lower right.
+
+<img src="shiny/images/4_run_app_locally.png" width="500"/>
+
+Stop the app by clicking on one of the small red "Stop" signs, either in the Viewer Pane or in the Console.
+
+### Publish Content
+
+1. Verify that you have registered a Connect server to Publish to by pressing on the dropdown next to the "Publish" button and choosing "Manage Accounts".  This will bring up a window that shows what Connect servers you are registered to publishing to.
+
+<img src="images/5_register_connect_server.png" width="500"/>
+
+<img src="images/6_connect_server_ip.png" width="500"/>
+
+If the "Publishing Accounts" area is blank, follow the instructions in [Connecting Your Account](https://docs.rstudio.com/connect/user/connecting/) to register your Connect server to your IDE.
+
+2. Once you have verified that you have a Connect server available to publish to, press the blue "Publish" icon in the IDE and then the "Publish"  button to publish to the selected server.
+
+<img src="shiny/images/7_publish_app.png" width="500"/>
+
+3. Verify that content has been successfully deployed by looking in the "Deploy" pane of the IDE.  You should see "Application successfully deployed to <connect_server_address>" at the bottom.  
+
+<img src="shiny/images/9_deploy_details.png" width="500"/>
+
+4. Verify that content runs on Connect server.  A browser window may open automatically to the address listed in the deployment message when you publish, or you can copy and paste the URL into a browser to check whether the content is successfully running in Connect.
+
+<img src="shiny/images/8_verify_connect.png" width="500"/>
+
+_NOTE: Successful deployment is not a guarantee that the the app can run.  Always verify that the content is running properly on the Connect server._
