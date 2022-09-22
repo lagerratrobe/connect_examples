@@ -30,9 +30,9 @@ Stop the app by clicking on one of the small red "Stop" signs, either in the Vie
 
 1. Verify that you have registered a Connect server to Publish to by pressing on the dropdown next to the "Publish" button and choosing "Manage Accounts".  This will bring up a window that shows what Connect servers you are registered to publishing to.
 
-<img src="images/5_register_connect_server.png" width="500"/>
+<img src="shiny/images/5_register_connect_server.png" width="500"/>
 
-<img src="images/6_connect_server_ip.png" width="500"/>
+<img src="shiny/images/6_connect_server_ip.png" width="500"/>
 
 If the "Publishing Accounts" area is blank, follow the instructions in [Connecting Your Account](https://docs.rstudio.com/connect/user/connecting/) to register your Connect server to your IDE.
 
