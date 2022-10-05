@@ -6,12 +6,11 @@ RStudio Connect is an enterprise level publishing platform for interactive dashb
 #| label: format_tbl
 #| tbl-cap: "Connect Supported Formats"
 
-library(dplyr)
 library(gt)
 
 formats <- read.csv("connect_formats.csv", sep=",") 
-gt(formats) %>%
-  tab_options(row.striping.include_table_body = TRUE) %>%
+gt(formats) |>
+  tab_options(row.striping.include_table_body = TRUE) |>
   tab_options(
      table.border.top.color = "black",
      table.border.bottom.color = "black",
@@ -19,7 +18,7 @@ gt(formats) %>%
      data_row.padding = px(2),
      #Adjust font sizes and alignment
      heading.align = "left",
-     table.font.size = 10) %>%
+     table.font.size = 10) |>
     tab_style(
     style = cell_borders(
       sides = c("left", "right"),

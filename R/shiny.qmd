@@ -8,15 +8,17 @@ The easiest way to publish a shiny app is via the Rstudio IDE, either using the 
 
 ## Create Content {.numbered}
 
-### 1. Create a new Shiny Web App
+### 1. Create a new Project
 
-![](shiny/images/1_shiny_app_create.png){fig-align="left" width=100%}
+Choose "New Directory" and "Shiny Application"
+
+![f](shiny/images/1_new_Shiny_App_Project.png){fig-align="left" width=100%}
 
 We named ours, "Shiny_Example"
 
-![](shiny/images/2_shiny_app_name.png){fig-align="left" width=50%}
+![](shiny/images/2_1_shiny_app_name.png){fig-align="left" width=50%}
 
-This should create a new folder named "Shiny Example" that contains a file named "app.R" which will open automatically in the IDE.  RStudio should also recognize that this is a Shiny app and a "Run App" button will be visible on the right side of the editing pane.
+This should create a new Project under /Data named "Shiny_Example" that contains a file named "app.R" which will open automatically in the IDE.  RStudio should also recognize that this is a Shiny app and a "Run App" button will be visible on the right side of the editing pane.
 
 ### 2. Configure "Run" location
 
@@ -58,10 +60,10 @@ Look in the "Deploy" pane of the IDE.  You should see "Application successfully 
 
 ![](shiny/images/9_deploy_details.png){fig-align="left" width=80%}
 
+_NOTE: Successful deployment is not a guarantee that the the app can run.  Always verify that the content is running properly on the Connect server._
+
 ### 4. Verify that content runs
 
 A browser window should open automatically to the address listed in the deployment message when you publish, or you can copy and paste the URL into a browser to check whether the content is successfully running in Connect.
 
 ![](shiny/images/8_verify_connect.png){fig-align="left" width=100%}
-
-_NOTE: Successful deployment is not a guarantee that the the app can run.  Always verify that the content is running properly on the Connect server._
