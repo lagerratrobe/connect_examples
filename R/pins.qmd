@@ -47,7 +47,7 @@ pins::pin_write(board,
 
 Click on __Source__ in the IDE
 
-![](pins/images/2_pins_source_file.png){fig-align="left" width="80%"}
+![](pins/images/2_pins_source_file.png){fig-align="left" width="100%"}
 
 __Source__ will execute the contents of the current file and you should see the following in the Console window"
 
