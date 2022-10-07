@@ -1,8 +1,8 @@
 # Shiny {.unnumbered}
 
-__NOTE:__ An excellent guide which seems to follow the same structure that I've used below exists [here](https://docs.rstudio.com/how-to-guides/users/basic/publish-shinyapp/) already.
-
 The easiest way to publish a shiny app is via the Rstudio IDE, either using the desktop version or one of the server based products like Workbench or RStudio Server.  All have built-in examples of a simple Shiny application, "Old Faithful Geyser Data", that can be created by choosing "File", "New Project", "Shiny Web App" and then be published using the IDE's built-in "Publish" button. 
+
+__NOTE:__ An excellent guide which seems to follow the same structure that I've used below exists [here](https://docs.rstudio.com/how-to-guides/users/basic/publish-shinyapp/) already.
 
 ## Prerequisites
 
