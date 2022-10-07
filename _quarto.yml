@@ -16,6 +16,7 @@ book:
         - R/shiny.qmd
         - R/plumber.qmd
         - R/bookdown.qmd
+        - R/pins.qmd
     - part: Python
       chapters: 
         - python/streamlit.qmd
