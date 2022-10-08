@@ -17,6 +17,7 @@ book:
         - R/plumber.qmd
         - R/bookdown.qmd
         - R/pins.qmd
+        - R/rmarkdown.qmd
     - part: Python
       chapters: 
         - python/streamlit.qmd
