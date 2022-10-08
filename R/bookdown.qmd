@@ -65,7 +65,7 @@ Select all of the files and the server that you want to to publish to and then p
 
 Look in the "Deploy" pane of the IDE.  You should see "Site successfully deployed to <connect_server_address>" at the bottom, like this.
 
-```
+```markdown
 [Connect] Completed deployed execution
 Site successfully deployed to http://3.144.138.21/content/6ed04778-cdb0-4a67-aaf1-2ed8ed814617/
 Deployment completed: http://3.144.138.21/connect/#/apps/6ed04778-cdb0-4a67-aaf1-2ed8ed814617
