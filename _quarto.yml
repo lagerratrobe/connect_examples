@@ -18,6 +18,7 @@ book:
         - R/bookdown.qmd
         - R/pins.qmd
         - R/rmarkdown.qmd
+        - R/quarto.qmd
     - part: Python
       chapters: 
         - python/streamlit.qmd
