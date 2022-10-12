@@ -6,7 +6,7 @@ An alternative method is shown below which is code based.
 
 ## Prerequisites
 
--   `rmarkdown` package must be installed
+-   `rmarkdown` R package installed
 
 ## Create Content {.numbered}
 
@@ -35,13 +35,13 @@ title("Pressure Plot")
 
 Open the file in RStudio
 
-![](rmarkdown/images/1_5_rstudio_rmd.png){fig-align="left" width="80%"}
+![](images/1_5_rstudio_rmd.png){fig-align="left" width="80%"}
 
 ### 2. Verify the file renders locally
 
 Press the __Knit__ button in the IDE. The rendered content should display in the Viewer pane.
 
-![](rmarkdown/images/1_rmd_knit.png){fig-align="left" width="100%"}
+![](images/1_rmd_knit.png){fig-align="left" width="100%"}
 
 ## Publish Content {.numbered}
 
@@ -49,11 +49,11 @@ Press the __Knit__ button in the IDE. The rendered content should display in the
 
 Press on the dropdown next to the "Publish" button and choose "Manage Accounts".  
 
-![](shiny/images/5_register_connect_server.png){fig-align="left" width=100%}
+![](../shiny/images/5_register_connect_server.png){fig-align="left" width=100%}
 
 This will bring up a window that shows what Connect servers you are registered to publishing to.
 
-![](shiny/images/6_connect_server_ip.png){fig-align="left" width=50%}
+![](../shiny/images/6_connect_server_ip.png){fig-align="left" width=50%}
 
 If the "Publishing Accounts" area is blank, follow the instructions in [Connecting Your Account](https://docs.rstudio.com/connect/user/connecting/) to register your Connect server to your IDE.
 
@@ -61,7 +61,7 @@ If the "Publishing Accounts" area is blank, follow the instructions in [Connecti
 
 Once you have verified that you have a Connect server available to publish to, press the blue "Publish" icon in the IDE and then the "Publish"  button to publish to the selected server.
 
-![](rmarkdown/images/2_.png){fig-align="left" width=50%}
+![](images/2_.png){fig-align="left" width=50%}
 
 ### 3. Verify content deployment
 
@@ -77,4 +77,4 @@ Deployment completed: https://colorado.rstudio.com/rsc/connect/#/apps/ac07b562-6
 
 A browser window should open automatically to the address listed in the deployment message when you publish, or you can copy and paste the URL into a browser to check whether the content is successfully running in Connect.
 
-![](rmarkdown/images/3_.png){fig-align="left" width=100%}
+![](images/3_.png){fig-align="left" width=100%}

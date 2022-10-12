@@ -6,7 +6,7 @@ __NOTE:__ An excellent guide which seems to follow the same structure that I've 
 
 ## Prerequisites
 
-* Must have `shiny` R package installed
+* `shiny` R package installed
 
 ## Create Content {.numbered}
 
@@ -14,11 +14,11 @@ __NOTE:__ An excellent guide which seems to follow the same structure that I've 
 
 Choose "New Directory" and "Shiny Application"
 
-![](shiny/images/1_new_Shiny_App_Project.png){fig-align="left" width=100%}
+![](images/1_new_Shiny_App_Project.png){fig-align="left" width=100%}
 
 We named ours, "Shiny_Example"
 
-![](shiny/images/2_1_shiny_app_name.png){fig-align="left" width=50%}
+![](images/2_1_shiny_app_name.png){fig-align="left" width=50%}
 
 This should create a new Project under /Data named "Shiny_Example" that contains a file named "app.R" which will open automatically in the IDE.  RStudio should also recognize that this is a Shiny app and a "Run App" button will be visible on the right side of the editing pane.
 
@@ -26,13 +26,13 @@ This should create a new Project under /Data named "Shiny_Example" that contains
 
 Verify that "Run in Viewer Pane" is selected in the "Run App" dropdown.
 
-![](shiny/images/3_shiny_run_app.png){fig-align="left" width=80%}
+![](images/3_shiny_run_app.png){fig-align="left" width=80%}
 
 ### 3. Run the App
 
 Press the "Run App" button and you should see "Old Faithful Geyser Data" displayed in the Viewer Pane on the lower right.
 
-![](shiny/images/4_run_app_locally.png){fig-align="left" width=100%}
+![](images/4_run_app_locally.png){fig-align="left" width=100%}
 
 Stop the app by clicking on one of the small red "Stop" signs, either in the Viewer Pane or in the Console.
 
@@ -42,11 +42,11 @@ Stop the app by clicking on one of the small red "Stop" signs, either in the Vie
 
 Press on the dropdown next to the "Publish" button and choose "Manage Accounts".  
 
-![](shiny/images/5_register_connect_server.png){fig-align="left" width=100%}
+![](images/5_register_connect_server.png){fig-align="left" width=100%}
 
 This will bring up a window that shows what Connect servers you are registered to publishing to.
 
-![](shiny/images/6_connect_server_ip.png){fig-align="left" width=50%}
+![](images/6_connect_server_ip.png){fig-align="left" width=50%}
 
 If the "Publishing Accounts" area is blank, follow the instructions in [Connecting Your Account](https://docs.rstudio.com/connect/user/connecting/) to register your Connect server to your IDE.
 
@@ -54,13 +54,13 @@ If the "Publishing Accounts" area is blank, follow the instructions in [Connecti
 
 Once you have verified that you have a Connect server available to publish to, press the blue "Publish" icon in the IDE and then the "Publish"  button to publish to the selected server.
 
-![](shiny/images/7_publish_app.png){fig-align="left" width=50%}
+![](images/7_publish_app.png){fig-align="left" width=50%}
 
 ### 3. Verify content deployment
 
 Look in the "Deploy" pane of the IDE.  You should see "Application successfully deployed to <connect_server_address>" at the bottom.  
 
-![](shiny/images/9_deploy_details.png){fig-align="left" width=80%}
+![](images/9_deploy_details.png){fig-align="left" width=80%}
 
 _NOTE: Successful deployment is not a guarantee that the the app can run.  Always verify that the content is running properly on the Connect server._
 
@@ -68,4 +68,4 @@ _NOTE: Successful deployment is not a guarantee that the the app can run.  Alway
 
 A browser window should open automatically to the address listed in the deployment message when you publish, or you can copy and paste the URL into a browser to check whether the content is successfully running in Connect.
 
-![](shiny/images/8_verify_connect.png){fig-align="left" width=100%}
+![](images/8_verify_connect.png){fig-align="left" width=100%}

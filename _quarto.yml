@@ -13,15 +13,15 @@ book:
         - intro/how-to-use-this-guide.qmd
     - part: R
       chapters: 
-        - R/shiny.qmd
-        - R/plumber.qmd
-        - R/bookdown.qmd
-        - R/pins.qmd
-        - R/rmarkdown.qmd
-        - R/quarto.qmd
+        - R/shiny/shiny.qmd
+        - R/plumber/plumber.qmd
+        - R/bookdown/bookdown.qmd
+        - R/pins/pins.qmd
+        - R/rmarkdown/rmarkdown.qmd
+        - R/quarto/quarto.qmd
     - part: Python
       chapters: 
-        - python/streamlit.qmd
+        - python/streamlit/streamlit.qmd
 
 format:
   html:

@@ -1,4 +1,4 @@
-# Plumber {.unnumbered}
+# Quarto {.unnumbered}
 
 Quarto.org has an excellent example [here](https://quarto.org/docs/publishing/rstudio-connect.html) of how to publish a Quarto doc and publish it to Connect.
 

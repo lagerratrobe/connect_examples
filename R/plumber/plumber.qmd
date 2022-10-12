@@ -4,4 +4,4 @@ The RStudio Docs have an excellent example [here](https://docs.rstudio.com/how-t
 
 _[Question] - Should we try to merge this work into that?_
 
-![](plumber/images/1_.png){fig-align="left" width=100%}
+![](images/1_.png){fig-align="left" width=100%}

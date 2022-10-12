@@ -6,17 +6,17 @@ The easiest way to publish a Pins board is to use the RStudio IDE to create an R
 
 ## Prerequisites
 
--   Pins package
+-   `pins` R package installed
 
 ## Verify Connect server is registered
 
 Select the dropdown next to the **Publish Application** button and choose **Manage Accounts**.
 
-![](shiny/images/5_register_connect_server.png){fig-align="left" width="100%"}
+![](../shiny/images/5_register_connect_server.png){fig-align="left" width="100%"}
 
 This will bring up a window that shows what Connect servers you are registered to publish to.
 
-![](shiny/images/6_connect_server_ip.png){fig-align="left" width="50%"}
+![](../shiny/images/6_connect_server_ip.png){fig-align="left" width="50%"}
 
 If the **Publishing Accounts** area is blank, follow the instructions in [Connecting Your Account](https://docs.rstudio.com/connect/user/connecting/) to register your Connect server to your IDE.
 
@@ -24,7 +24,7 @@ If the **Publishing Accounts** area is blank, follow the instructions in [Connec
 
 ### 1. Create a new R script named `faithful_pin.R`
 
-![](pins/images/1_pins_new_rscript.png){fig-align="left" width="80%"}
+![](images/1_pins_new_rscript.png){fig-align="left" width="80%"}
 
 ### 2. Drop the following code into the file
 
@@ -47,7 +47,7 @@ pins::pin_write(board,
 
 Click on __Source__ in the IDE
 
-![](pins/images/2_pins_source_file.png){fig-align="left" width="100%"}
+![](images/2_pins_source_file.png){fig-align="left" width="100%"}
 
 __Source__ will execute the contents of the current file and you should see the following in the Console window"
 
@@ -57,12 +57,12 @@ Guessing `type = 'rds'`
 Writing to pin 'roger.andre/faithful_data'
 ```
 
-### 2. Verify the content on Connect
+### 2. Verify content on Connect server
 
 You should see the newly published pin set in your Content listing.
 
-![](pins/images/3_pins_content_connect.png){fig-align="left" width="100%"}
+![](images/3_pins_content_connect.png){fig-align="left" width="100%"}
 
 Click on the content and you should see information about the data listed.
 
-![](pins/images/4_pins_connect_data.png){fig-align="left" width="100%"}
+![](images/4_pins_connect_data.png){fig-align="left" width="100%"}
