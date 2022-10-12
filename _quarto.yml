@@ -1,0 +1,34 @@
+project:
+  type: book
+
+book:
+  title: "Connect Content Publishing Guide"
+  author: "Roger Andre"
+  date: "9/19/2022"
+  chapters:
+    - index.qmd
+    - part: Introduction
+      chapters:
+        - intro/evolution-and_formats.qmd
+        - intro/how-to-use-this-guide.qmd
+    - part: R
+      chapters: 
+        - R/shiny/shiny.qmd
+        - R/plumber/plumber.qmd
+        - R/bookdown/bookdown.qmd
+        - R/pins/pins.qmd
+        - R/rmarkdown/rmarkdown.qmd
+        - R/quarto/quarto.qmd
+    - part: Python
+      chapters: 
+        - python/streamlit/streamlit.qmd
+
+format:
+  html:
+    theme: cosmo
+    number-sections: false
+  pdf:
+    documentclass: scrreprt
+
+
+
