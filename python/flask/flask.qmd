@@ -38,14 +38,14 @@ flask
 ## Register Connect Server {.numbered}
 
 ### 1. Get API key from Connect server
-[insert image of Connect API key interface]
+![](../streamlit/images/1_streamlit_connect_api_key.png){fig-align="left" width=100%}
 
 ### 2. Register API key and server with `rsconnect-python`
 
 ```markdown
 rsconnect add --api-key <API_KEY> \
---server https://colorado.rstudio.com/rsc/ \
---name colo_connect
+--server <CONNECT_SERVER_URL> \
+--name <ALIAS>
 ```
 
 ## Publish Content {.numbered}
@@ -54,7 +54,7 @@ rsconnect add --api-key <API_KEY> \
 
 ```markdown
 rsconnect deploy api . \
---title "Flask Example" -n colo_connect
+--title "Flask Example" -n <ALIAS>
 ```
 
 You should see the following after a successful deployment.
