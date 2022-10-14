@@ -4,6 +4,7 @@
 
 * `flask` Python package installed
 * `rsconnect-python` Python package installed
+* Empty working directory
 
 ## Create Content {.numbered}
 
@@ -35,6 +36,28 @@ flask
 
 ```
 
+### 3. Verify content runs locally
+
+```markdown
+python3 app.py
+```
+
+You should see:
+
+```markdown
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. 
+Do not use it in a production deployment. 
+Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+```
+ And when you go to the URL, you will see the following JSON in the browser:
+ 
+ ```markdown
+ {"greeting":"Hello, World!"}
+ ```
+ 
 ## Register Connect Server {.numbered}
 
 ### 1. Get API key from Connect server
@@ -60,10 +83,10 @@ rsconnect deploy api . \
 You should see the following after a successful deployment.
 
 ```markdown
-
+Launching Python API...
 Deployment completed successfully.
-	 Dashboard content URL: https://colorado.rstudio.com/rsc/connect/#/apps/dd3114d2-c845-475a-971a-738d4f3ea5e7
-	 Direct content URL: https://colorado.rstudio.com/rsc/content/dd3114d2-c845-475a-971a-738d4f3ea5e7/
+Dashboard content URL: https://colorado.rstudio.com/rsc/connect/#/apps/dd3114d2-c845-475a-971a-738d4f3ea5e7
+Direct content URL: https://colorado.rstudio.com/rsc/content/dd3114d2-c845-475a-971a-738d4f3ea5e7/
 ```
 
 ### 2. Verify that API is accessible on Connect

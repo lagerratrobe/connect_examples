@@ -5,6 +5,7 @@
 * `streamlit` Python package installed
 * `numpy` Python package installed
 * `rsconnect-python` Python package installed
+* Empty working directory
 
 ## Create Content {.numbered}
 
@@ -39,6 +40,12 @@ st.button("Re-run")
 streamlit
 numpy
 
+```
+
+### 3. Verify that content runs locally
+
+```markdown
+streamlit run app.py
 ```
 
 ## Register Connect Server {.numbered}
