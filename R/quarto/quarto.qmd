@@ -79,6 +79,3 @@ Deployment completed: https://colorado.rstudio.com/rsc/connect/#/apps/ac07b562-6
 The __Deployment completed__ link should look like this.
 
 ![](images/3_deployed_content_connect.png){fig-align="left" width=100%}
-
-
-![](images/3_.png){fig-align="left" width=100%}
