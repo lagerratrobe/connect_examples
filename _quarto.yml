@@ -22,6 +22,14 @@ book:
     - part: Python
       chapters: 
         - python/streamlit/streamlit.qmd
+        - python/dash/dash.qmd
+        - python/flask/flask.qmd
+        - python/fastapi/fastapi.qmd
+        - python/bokeh/bokeh.qmd
+        - python/shiny/shiny.qmd
+        - python/quarto/quarto_p.qmd
+        - python/pins/pins.qmd
+        - python/jupyter/ipynb.qmd
 
 format:
   html:
