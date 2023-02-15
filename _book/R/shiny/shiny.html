@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Connect Content Publishing Guide - Shiny</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../R/plumber/plumber.html" rel="next">
+<link href="../../publishing_process/python_rsconnect.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Shiny</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Connect Content Publishing Guide</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Introduction</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../intro/evolution-and_formats.html" class="sidebar-item-text sidebar-link">Evolution and Formats</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../intro/how-to-use-this-guide.html" class="sidebar-item-text sidebar-link">Who should read this guide?</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Publishing Process</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publishing_process/overview.html" class="sidebar-item-text sidebar-link">Overview</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publishing_process/push_button.html" class="sidebar-item-text sidebar-link">Push-Button Publishing</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publishing_process/r_rsconnect.html" class="sidebar-item-text sidebar-link">Publishing From R</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publishing_process/python_rsconnect.html" class="sidebar-item-text sidebar-link">Publishing From Python</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">R</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../R/shiny/shiny.html" class="sidebar-item-text sidebar-link active">Shiny</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../R/plumber/plumber.html" class="sidebar-item-text sidebar-link">Plumber</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../R/bookdown/bookdown.html" class="sidebar-item-text sidebar-link">Bookdown</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../R/pins/pins.html" class="sidebar-item-text sidebar-link">Pins</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../R/rmarkdown/rmarkdown.html" class="sidebar-item-text sidebar-link">Rmarkdown</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../R/quarto/quarto.html" class="sidebar-item-text sidebar-link">Quarto</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Python</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../python/streamlit/streamlit.html" class="sidebar-item-text sidebar-link">Streamlit</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../python/dash/dash.html" class="sidebar-item-text sidebar-link">Dash</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../python/flask/flask.html" class="sidebar-item-text sidebar-link">Flask API</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../python/fastapi/fastapi.html" class="sidebar-item-text sidebar-link">FastAPI</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../python/bokeh/bokeh.html" class="sidebar-item-text sidebar-link">Bokeh</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../python/shiny/shiny.html" class="sidebar-item-text sidebar-link">Shiny (Python)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../python/quarto/quarto_p.html" class="sidebar-item-text sidebar-link">Quarto (Python)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../python/pins/pins.html" class="sidebar-item-text sidebar-link">Pins (Python)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../python/jupyter/ipynb.html" class="sidebar-item-text sidebar-link">Jupyter Notebook</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#create-content" id="toc-create-content" class="nav-link" data-scroll-target="#create-content">Create Content</a>
+  <ul class="collapse">
+  <li><a href="#create-a-new-project" id="toc-create-a-new-project" class="nav-link" data-scroll-target="#create-a-new-project">1. Create a new Project</a></li>
+  <li><a href="#configure-run-location" id="toc-configure-run-location" class="nav-link" data-scroll-target="#configure-run-location">2. Configure “Run” location</a></li>
+  <li><a href="#run-the-app" id="toc-run-the-app" class="nav-link" data-scroll-target="#run-the-app">3. Run the App</a></li>
+  </ul></li>
+  <li><a href="#publish-content" id="toc-publish-content" class="nav-link" data-scroll-target="#publish-content">Publish Content</a>
+  <ul class="collapse">
+  <li><a href="#verify-connect-server-is-registered" id="toc-verify-connect-server-is-registered" class="nav-link" data-scroll-target="#verify-connect-server-is-registered">1. Verify Connect server is registered</a></li>
+  <li><a href="#publish" id="toc-publish" class="nav-link" data-scroll-target="#publish">2. Publish</a></li>
+  <li><a href="#verify-content-deployment" id="toc-verify-content-deployment" class="nav-link" data-scroll-target="#verify-content-deployment">3. Verify content deployment</a></li>
+  <li><a href="#verify-that-content-runs" id="toc-verify-that-content-runs" class="nav-link" data-scroll-target="#verify-that-content-runs">4. Verify that content runs</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Shiny</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>The easiest way to publish a shiny app is via the Rstudio IDE, either using the desktop version or one of the server based products like Workbench or RStudio Server. All have built-in examples of a simple Shiny application, “Old Faithful Geyser Data”, that can be created by choosing “File”, “New Project”, “Shiny Web App” and then be published using the IDE’s built-in “Publish” button.</p>
+<p><strong>NOTE:</strong> An excellent guide which seems to follow the same structure that I’ve used below exists <a href="https://docs.rstudio.com/how-to-guides/users/basic/publish-shinyapp/">here</a> already.</p>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<ul>
+<li><code>shiny</code> R package installed</li>
+</ul>
+</section>
+<section id="create-content" class="level2 numbered">
+<h2 class="numbered anchored" data-anchor-id="create-content">Create Content</h2>
+<section id="create-a-new-project" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-new-project">1. Create a new Project</h3>
+<p>Choose “New Directory” and “Shiny Application”</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/1_new_Shiny_App_Project.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+<p>We named ours, “Shiny_Example”</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/2_1_shiny_app_name.png" class="img-fluid figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+<p>This should create a new Project under /Data named “Shiny_Example” that contains a file named “app.R” which will open automatically in the IDE. RStudio should also recognize that this is a Shiny app and a “Run App” button will be visible on the right side of the editing pane.</p>
+</section>
+<section id="configure-run-location" class="level3">
+<h3 class="anchored" data-anchor-id="configure-run-location">2. Configure “Run” location</h3>
+<p>Verify that “Run in Viewer Pane” is selected in the “Run App” dropdown.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/3_shiny_run_app.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</section>
+<section id="run-the-app" class="level3">
+<h3 class="anchored" data-anchor-id="run-the-app">3. Run the App</h3>
+<p>Press the “Run App” button and you should see “Old Faithful Geyser Data” displayed in the Viewer Pane on the lower right.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/4_run_app_locally.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+<p>Stop the app by clicking on one of the small red “Stop” signs, either in the Viewer Pane or in the Console.</p>
+</section>
+</section>
+<section id="publish-content" class="level2 numbered">
+<h2 class="numbered anchored" data-anchor-id="publish-content">Publish Content</h2>
+<section id="verify-connect-server-is-registered" class="level3">
+<h3 class="anchored" data-anchor-id="verify-connect-server-is-registered">1. Verify Connect server is registered</h3>
+<p>Press on the dropdown next to the “Publish” button and choose “Manage Accounts”.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/5_register_connect_server.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+<p>This will bring up a window that shows what Connect servers you are registered to publishing to.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/6_connect_server_ip.png" class="img-fluid figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+<p>If the “Publishing Accounts” area is blank, follow the instructions in <a href="https://docs.rstudio.com/connect/user/connecting/">Connecting Your Account</a> to register your Connect server to your IDE.</p>
+</section>
+<section id="publish" class="level3">
+<h3 class="anchored" data-anchor-id="publish">2. Publish</h3>
+<p>Once you have verified that you have a Connect server available to publish to, press the blue “Publish” icon in the IDE and then the “Publish” button to publish to the selected server.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/7_publish_app.png" class="img-fluid figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+</section>
+<section id="verify-content-deployment" class="level3">
+<h3 class="anchored" data-anchor-id="verify-content-deployment">3. Verify content deployment</h3>
+<p>Look in the “Deploy” pane of the IDE. You should see “Application successfully deployed to <connect_server_address>” at the bottom.</connect_server_address></p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/9_deploy_details.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p><em>NOTE: Successful deployment is not a guarantee that the the app can run. Always verify that the content is running properly on the Connect server.</em></p>
+</section>
+<section id="verify-that-content-runs" class="level3">
+<h3 class="anchored" data-anchor-id="verify-that-content-runs">4. Verify that content runs</h3>
+<p>A browser window should open automatically to the address listed in the deployment message when you publish, or you can copy and paste the URL into a browser to check whether the content is successfully running in Connect.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/8_verify_connect.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../publishing_process/python_rsconnect.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Publishing From Python</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../R/plumber/plumber.html" class="pagination-link">
+        <span class="nav-page-text">Plumber</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

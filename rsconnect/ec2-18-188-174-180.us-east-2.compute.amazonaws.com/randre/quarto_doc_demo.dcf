@@ -1,0 +1,31 @@
+name: quarto_doc_demo
+title: Quarto Doc Demo
+username: randre
+account: randre
+server: ec2-18-188-174-180.us-east-2.compute.amazonaws.com
+hostUrl: http://ec2-18-188-174-180.us-east-2.compute.amazonaws.com:3939/__api__
+appId: 60
+bundleId: 95
+url: http://ec2-18-188-174-180.us-east-2.compute.amazonaws.com:3939/content/ecc77ea7-f940-42e1-8341-a7fc74014b5b/
+when: 1671559382.04729
+lastSyncTime: 1671559382.04735
+quarto_version: 1.1.251
+quarto_engines: markdown
+asMultiple: FALSE
+asStatic: FALSE
+
+name: quarto_doc_demo
+title: Quarto Doc Demo
+username: randre
+account: randre
+server: ec2-18-188-174-180.us-east-2.compute.amazonaws.com
+hostUrl: http://ec2-18-188-174-180.us-east-2.compute.amazonaws.com:3939/__api__
+appId: 60
+bundleId: 95
+url: http://ec2-18-188-174-180.us-east-2.compute.amazonaws.com:3939/content/ecc77ea7-f940-42e1-8341-a7fc74014b5b/
+when: 1671559382.04729
+lastSyncTime: 1671559382.04735
+quarto_version: 1.1.251
+quarto_engines: knitr
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,0 +1,499 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Connect Content Publishing Guide",
+    "section": "",
+    "text": "This document contains information about how to publish various types of supported content in RStudio Connect."
+  },
+  {
+    "objectID": "intro/evolution-and_formats.html",
+    "href": "intro/evolution-and_formats.html",
+    "title": "Evolution and Formats",
+    "section": "",
+    "text": "Connect Supported Formats\n  \n  \n    \n      Format\n      Type\n      Usage\n      Language\n      Connect.Version\n    \n  \n  \n    Shiny\nApplication\nInteractive dashboards and reports\nR\nv 1.1\n    Plumber\nAPI\nAPI\nR\nv 1.5.2\n    Bookdown\nSite\nOnline books and documentation\nR\nv 1.1\n    RMarkdown\nSite\nProjects, documents, websites and books\nR\nv 1.1\n    Dash\nApplication\nInteractive dashboards and reports\nPython\nv 1.8.2\n    FastAPI\nAPI\nAPI\nPython\n2021.08.0\n    Streamlit\nApplication\nInteractive dashboards and reports\nPython\nv 1.8.6\n    Jupyter Notebook\nSite\nStatic code, formatted text, visualizations\nPython\nv 1.9.0\n    Bokeh\nApplication\n Interactive visualizations\nPython\nv 1.8.6\n    Flask\nAPI\nAPI\nPython\nv 1.8.2\n    Quarto\nSite\nProjects, documents, websites and books\nR\n2022.04.0\n    Pins\n???\nData sharing\nR\nv 1.7.8\n    Shiny\nSite\nInteractive dashboards and reports\nPython\n2022.08.0\n    Quarto\nSite\nProjects, documents, websites and books\nPython\n2022.04.0\n    Pins\n???\nData sharing\nPython\nv 1.7.8\n  \n  \n  \n\n\n\n\nNOTE: Connect Versions prior to 1.1 existed, but are not relevant to this guide."
+  },
+  {
+    "objectID": "intro/how-to-use-this-guide.html",
+    "href": "intro/how-to-use-this-guide.html",
+    "title": "Who should read this guide?",
+    "section": "",
+    "text": "How to use this guide?\nThis guide is organized by language into separate chapters for R and Python. Each language chapter is broken up into subsections for specific content types. Some content types, like Pins and Quarto are repeated in both languages since they can be created and published from both.\nEach section on specific content contains what we feel is the “minimum viable” example needed to create a small exemplar of that content type and push it to a Connect server. In most cases, this involves copying and pasting a small amount of code into an IDE and then either using the built-in Connect publishing extension in that IDE, OR executing some code in a terminal to publish. This will vary depending on the nature of the format.\nIn addition to walking through the content creation and publishing process, each section contains instructions for how to verify the “Expected Outcome” on the Connect server. This could be a simple as following a URL and verifying that a Web page looks as expected, or in some cases, running a short command in a terminal and verifying that the output matches the example given."
+  },
+  {
+    "objectID": "publishing_process/overview.html",
+    "href": "publishing_process/overview.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Registering the Connect server\nCreating the content to be deployed\nPublishing, aka “deploying” the content to the Connect server\n\nThis chapter will focus on Parts 1 and 3 of the process, Registering and Publishing, as the procedures used for these are not specific to a single content type. As such, it is useful to look at these in a consolidated and separate context from Content Creation, which can vary based on the content type being worked on. Registering and Publishing can be summarized as follows:\n\nServer registration is the process by which a user enables an environment they are working in to communicate and send content a Connect server.\nPublishing is the act of bundling up data that contains both content and metadata about it and sending it to a Connect server.\n\n\nChapter Organization\nThe material in this chapter has been consolidated by the user environment used to perform the work. Registration and Publishing can be done in several different ways:\n\nFrom the RStudio IDE GUI\nFrom an R console (or script) using the rsconnect R package\nFrom a Unix terminal using the rsconnect-python package\n\nWhile it is not necessary to use the same environment for both functions, but it is useful to show how to do both in the same view."
+  },
+  {
+    "objectID": "publishing_process/push_button.html",
+    "href": "publishing_process/push_button.html",
+    "title": "Push-Button Publishing",
+    "section": "",
+    "text": "Where we will discuss how to register, and publish to, a Connect server from within the RStudio IDE (and possibly Jupyter Notebooks)."
+  },
+  {
+    "objectID": "publishing_process/r_rsconnect.html",
+    "href": "publishing_process/r_rsconnect.html",
+    "title": "Publishing From R",
+    "section": "",
+    "text": "Where we will discuss how the rsconnect R package can be used to register, and publish to, a Connect server."
+  },
+  {
+    "objectID": "publishing_process/python_rsconnect.html",
+    "href": "publishing_process/python_rsconnect.html",
+    "title": "Publishing From Python",
+    "section": "",
+    "text": "Where we will describe how the Python rsconnect-python package can be used to register, and publish to, a Connect server."
+  },
+  {
+    "objectID": "R/shiny/shiny.html",
+    "href": "R/shiny/shiny.html",
+    "title": "Shiny",
+    "section": "",
+    "text": "The easiest way to publish a shiny app is via the Rstudio IDE, either using the desktop version or one of the server based products like Workbench or RStudio Server. All have built-in examples of a simple Shiny application, “Old Faithful Geyser Data”, that can be created by choosing “File”, “New Project”, “Shiny Web App” and then be published using the IDE’s built-in “Publish” button.\nNOTE: An excellent guide which seems to follow the same structure that I’ve used below exists here already."
+  },
+  {
+    "objectID": "R/shiny/shiny.html#prerequisites",
+    "href": "R/shiny/shiny.html#prerequisites",
+    "title": "Shiny",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nshiny R package installed"
+  },
+  {
+    "objectID": "R/shiny/shiny.html#create-content",
+    "href": "R/shiny/shiny.html#create-content",
+    "title": "Shiny",
+    "section": "Create Content",
+    "text": "Create Content\n\n1. Create a new Project\nChoose “New Directory” and “Shiny Application”\n\n\n\n\n\nWe named ours, “Shiny_Example”\n\n\n\n\n\nThis should create a new Project under /Data named “Shiny_Example” that contains a file named “app.R” which will open automatically in the IDE. RStudio should also recognize that this is a Shiny app and a “Run App” button will be visible on the right side of the editing pane.\n\n\n2. Configure “Run” location\nVerify that “Run in Viewer Pane” is selected in the “Run App” dropdown.\n\n\n\n\n\n\n\n3. Run the App\nPress the “Run App” button and you should see “Old Faithful Geyser Data” displayed in the Viewer Pane on the lower right.\n\n\n\n\n\nStop the app by clicking on one of the small red “Stop” signs, either in the Viewer Pane or in the Console."
+  },
+  {
+    "objectID": "R/shiny/shiny.html#publish-content",
+    "href": "R/shiny/shiny.html#publish-content",
+    "title": "Shiny",
+    "section": "Publish Content",
+    "text": "Publish Content\n\n1. Verify Connect server is registered\nPress on the dropdown next to the “Publish” button and choose “Manage Accounts”.\n\n\n\n\n\nThis will bring up a window that shows what Connect servers you are registered to publishing to.\n\n\n\n\n\nIf the “Publishing Accounts” area is blank, follow the instructions in Connecting Your Account to register your Connect server to your IDE.\n\n\n2. Publish\nOnce you have verified that you have a Connect server available to publish to, press the blue “Publish” icon in the IDE and then the “Publish” button to publish to the selected server.\n\n\n\n\n\n\n\n3. Verify content deployment\nLook in the “Deploy” pane of the IDE. You should see “Application successfully deployed to ” at the bottom.\n\n\n\n\n\nNOTE: Successful deployment is not a guarantee that the the app can run. Always verify that the content is running properly on the Connect server.\n\n\n4. Verify that content runs\nA browser window should open automatically to the address listed in the deployment message when you publish, or you can copy and paste the URL into a browser to check whether the content is successfully running in Connect."
+  },
+  {
+    "objectID": "R/plumber/plumber.html",
+    "href": "R/plumber/plumber.html",
+    "title": "Plumber",
+    "section": "",
+    "text": "The RStudio Docs have an excellent example here of how to create a Plumber API and publish it to Connect. However, a Plumber API can also be published using the rsconnect R package."
+  },
+  {
+    "objectID": "R/plumber/plumber.html#prerequisites",
+    "href": "R/plumber/plumber.html#prerequisites",
+    "title": "Plumber",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nrsconnect R package installed"
+  },
+  {
+    "objectID": "R/plumber/plumber.html#create-content",
+    "href": "R/plumber/plumber.html#create-content",
+    "title": "Plumber",
+    "section": "Create Content",
+    "text": "Create Content\n\n1. Create plumber.R file in empty directory\n\n\nplumber.R\n\nlibrary(plumber)\nlibrary(dplyr)\n\n# Basic car data\ndf <- mtcars %>% select(cyl, mpg)\ndf$model <- row.names(df)\nrow.names(df) <- NULL\n\n#* Return cars\n#* @param cyl\n#* @serializer json list(na=\"string\")\n#* @get /cars\nfunction(cyl=\"all\") {\n  if (cyl == \"all\") {\n    return(df)\n  } else {\n    return(df[df$cyl == as.integer(cyl),])\n  }\n}\n\n\n\n2. Create manifest.json file\nIn R console, execute the following:\n> rsconnect::writeManifest()\nThis should generate a new file named manifest.json in your directory.\n\n\n3. Verify content runs locally\nIf using RStudio IDE, click on Run API\n\n\n\n\n\nYou should see the Swagger interface for the API in the Viewer pane."
+  },
+  {
+    "objectID": "R/plumber/plumber.html#register-connect-server",
+    "href": "R/plumber/plumber.html#register-connect-server",
+    "title": "Plumber",
+    "section": "Register Connect Server",
+    "text": "Register Connect Server\n\n1. Get API key from Connect server\n\n\n\n\n\n\n\n2. Register the API key, account and server.\nIn R console:\nrsconnect::connectApiUser(account = \"<ACCOUNT>\", \n                          server = \"<CONNECT_SERVER_IP>\", \n                          apiKey = \"<API_KEY>\")\nShould return:\nThe account '<ACCOUNT>' is already registered; attempting to reconnect it.\n\nAccount registered successfully: <ACCOUNT>"
+  },
+  {
+    "objectID": "R/plumber/plumber.html#publish-content",
+    "href": "R/plumber/plumber.html#publish-content",
+    "title": "Plumber",
+    "section": "Publish Content",
+    "text": "Publish Content\n\n1. Deploy content to Connect server\nrsconnect::deployAPI(api = \".\", \n                     account = \"<ACCOUNT>\", \n                     server = \"<CONNECT_SERVER_IP>\")\nYou should see the following after a successful deployment.\n[Connect] Launching Plumber API...\nApi successfully deployed to http://3.16.161.212:3939/content/265f0df8-7e41-48c6-a1b1-2d5b599ff8ad/\n\n\n2. Verify that API is accessible on Connect\nFollow the link posted in the deployment pane. You should see the following."
+  },
+  {
+    "objectID": "R/bookdown/bookdown.html",
+    "href": "R/bookdown/bookdown.html",
+    "title": "Bookdown",
+    "section": "",
+    "text": "The easiest way to publish a Bookdown site is via the Rstudio IDE, either using the desktop version or one of the server based products like Workbench or RStudio Server. A built-in example of a simple Bookdown site can be created and then be published using the IDE’s built-in “Publish” button."
+  },
+  {
+    "objectID": "R/bookdown/bookdown.html#prerequisites",
+    "href": "R/bookdown/bookdown.html#prerequisites",
+    "title": "Bookdown",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nrmarkdown R package installed"
+  },
+  {
+    "objectID": "R/bookdown/bookdown.html#create-content",
+    "href": "R/bookdown/bookdown.html#create-content",
+    "title": "Bookdown",
+    "section": "Create Content",
+    "text": "Create Content\n\n1. Create a new Project\nChoose “File” –> “New Project” –> “New Directory” –> “Book project using bookdown”\n\n\n\n\n\nWe named ours, “Bookdown_Example”\n\n\n\n\n\nThis will create a new Project in a new directory named “Bookdown_Example” that contains all of the files needed to publish a minimal Bookdown site. In addition, 4 files will automatically be opened in the editor pane of the IDE:\n\nREADME.md\nindex.Rmd\n_bookdown.yml\n_output.yml\n\n\n\n2. Configure “Preview” location\nSelect the index.Rmd file and click on the dropdown next to the “Knit” button. Verify that “Preview in Viewer Pane” is selected.\n\n\n\n\n\n\n\n3. Preview the site locally\nPress the “Knit” button and you should see “A Minimal Book Example” displayed in the Viewer Pane on the lower right."
+  },
+  {
+    "objectID": "R/bookdown/bookdown.html#publish-content",
+    "href": "R/bookdown/bookdown.html#publish-content",
+    "title": "Bookdown",
+    "section": "Publish Content",
+    "text": "Publish Content\n\n1. Verify Connect server is registered\nSelect the dropdown next to the Publish Application button and choose Manage Accounts.\n\n\n\n\n\nThis will bring up a window that shows what Connect servers you are registered to publish to.\n\n\n\n\n\nIf the Publishing Accounts area is blank, follow the instructions in Connecting Your Account to register your Connect server to your IDE.\n\n\n2. Publish\nOnce you have verified that you have a Connect server available to publish to, press the blue “Publish” icon in the IDE and then Publish website with source code button to publish to the selected server.\n\n\n\n\n\nSelect all of the files and the server that you want to to publish to and then press Publish.\n\n\n\n\n\n\n\n3. Verify content deployment\nLook in the “Deploy” pane of the IDE. You should see “Site successfully deployed to ” at the bottom, like this.\n[Connect] Completed deployed execution\nSite successfully deployed to http://colorado.rstudio.com/content/6ed04778-cdb0-4a67-aaf1-2ed8ed814617/\nDeployment completed: http://colorado.rstudio.com/connect/#/apps/6ed04778-cdb0-4a67-aaf1-2ed8ed814617\nNOTE: Successful deployment is not a guarantee that the the app can run. Always verify that the content is running properly on the Connect server.\n\n\n4. Verify that content runs\nA browser window should open automatically to the address listed in the deployment message when you publish, or you can copy and paste the URL into a browser to check whether the content is successfully running in Connect."
+  },
+  {
+    "objectID": "R/pins/pins.html",
+    "href": "R/pins/pins.html",
+    "title": "Pins",
+    "section": "",
+    "text": "The easiest way to publish a Pins board is to use the RStudio IDE to create an R file that contains the information needed to transmit data and “pin” it to the Connect server.\nNote: The information below is taken from here and adapted for the purpose of this guide."
+  },
+  {
+    "objectID": "R/pins/pins.html#prerequisites",
+    "href": "R/pins/pins.html#prerequisites",
+    "title": "Pins",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\npins R package installed\nrsconnect R package installed"
+  },
+  {
+    "objectID": "R/pins/pins.html#verify-connect-server-is-registered",
+    "href": "R/pins/pins.html#verify-connect-server-is-registered",
+    "title": "Pins",
+    "section": "Verify Connect server is registered",
+    "text": "Verify Connect server is registered\nConnect servers which have been registered can be viewed by using the following command in an R console.\nrsconnect::servers(local = TRUE)\nThis will return a list of available servers.\n     name                   url                                   certificate\n[1,] \"colorado.rstudio.com\" \"https://colorado.rstudio.com/rsc/__api__\" \"\" \nThe name value will be referenced later as  for publishing.\nIf no Servers are listed, follow the instructions in Connecting Your Account to register your Connect server to your IDE."
+  },
+  {
+    "objectID": "R/pins/pins.html#create-content",
+    "href": "R/pins/pins.html#create-content",
+    "title": "Pins",
+    "section": "Create Content",
+    "text": "Create Content\n\n1. Create a new R script named faithful_pin.R\n\n\n\n\n\n\n\n2. Drop the following code into the file\n\n\nfaithful_pin.R\n\n# Establish connection to Connect server\nboard <- pins::board_rsconnect(server = \"<NAME>\")\n\n# Create small data set\nmy_data <- faithful #for example\n\n# Write data to server\npins::pin_write(board,\n                my_data,\n                name = \"faithful_data\")\n\nReplace the  value with the server name returned in the Verification step above."
+  },
+  {
+    "objectID": "R/pins/pins.html#publish-content",
+    "href": "R/pins/pins.html#publish-content",
+    "title": "Pins",
+    "section": "Publish Content",
+    "text": "Publish Content\n\n1. Run the script\nClick on Source in the IDE\n\n\n\n\n\nSource will execute the contents of the current file and you should see the following in the Console window”\nConnecting to RSC 2022.09.0 at <https://colorado.rstudio.com/rsc>\nGuessing `type = 'rds'`\nWriting to pin 'roger.andre/faithful_data'\n\n\n2. Verify content on Connect server\nYou should see the newly published pin set in your Content listing.\n\n\n\n\n\nClick on the content and you should see information about the data listed."
+  },
+  {
+    "objectID": "R/rmarkdown/rmarkdown.html",
+    "href": "R/rmarkdown/rmarkdown.html",
+    "title": "Rmarkdown",
+    "section": "",
+    "text": "The RStudio Docs have an excellent example here of how to create an Rmarkdown document using the built-in file creation tool and then publish it to Connect.\nAn alternative method is shown below which is code based."
+  },
+  {
+    "objectID": "R/rmarkdown/rmarkdown.html#prerequisites",
+    "href": "R/rmarkdown/rmarkdown.html#prerequisites",
+    "title": "Rmarkdown",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nrmarkdown R package installed"
+  },
+  {
+    "objectID": "R/rmarkdown/rmarkdown.html#create-content",
+    "href": "R/rmarkdown/rmarkdown.html#create-content",
+    "title": "Rmarkdown",
+    "section": "Create Content",
+    "text": "Create Content\n\n1. Create .Rmd file\nCreate a new file in a text editor named, rmarkdown_example.Rmd that contains the following code.\n---\ntitle: \"RMarkdown Example\"\noutput: html_document\n---\n### This is an R Markdown document.\n\n#### Pressure Data summary\n\n```{r echo=FALSE}\nsummary(pressure)\n```\n\n```{r echo=FALSE}\nplot(pressure)\ntitle(\"Pressure Plot\")\n```\nOpen the file in RStudio\n\n\n\n\n\n\n\n2. Verify the file renders locally\nPress the Knit button in the IDE. The rendered content should display in the Viewer pane."
+  },
+  {
+    "objectID": "R/rmarkdown/rmarkdown.html#publish-content",
+    "href": "R/rmarkdown/rmarkdown.html#publish-content",
+    "title": "Rmarkdown",
+    "section": "Publish Content",
+    "text": "Publish Content\n\n1. Verify Connect server is registered\nPress on the dropdown next to the “Publish” button and choose “Manage Accounts”.\n\n\n\n\n\nThis will bring up a window that shows what Connect servers you are registered to publishing to.\n\n\n\n\n\nIf the “Publishing Accounts” area is blank, follow the instructions in Connecting Your Account to register your Connect server to your IDE.\n\n\n2. Publish\nOnce you have verified that you have a Connect server available to publish to, press the blue “Publish” icon in the IDE and then the “Publish” button to publish to the selected server.\n\n\n\n\n\n\n\n3. Verify content deployment\nLook in the “Deploy” pane of the IDE. You should see “Completed deployed execution” at the bottom.\n[Connect] Completed deployed execution\nDocument successfully deployed to https://colorado.rstudio.com/rsc/content/ac07b562-6ef5-486d-98f9-adbd5551c215/\nDeployment completed: https://colorado.rstudio.com/rsc/connect/#/apps/ac07b562-6ef5-486d-98f9-adbd5551c215\n\n\n4. Verify that content runs on Connect\nA browser window should open automatically to the address listed in the deployment message when you publish, or you can copy and paste the URL into a browser to check whether the content is successfully running in Connect."
+  },
+  {
+    "objectID": "R/quarto/quarto.html",
+    "href": "R/quarto/quarto.html",
+    "title": "Quarto",
+    "section": "",
+    "text": "Quarto.org has an excellent example here of how to publish a Quarto doc and publish it to Connect.\nQuarto documents can also be created in a text editor and published directly from the RStudio IDE."
+  },
+  {
+    "objectID": "R/quarto/quarto.html#prerequisites",
+    "href": "R/quarto/quarto.html#prerequisites",
+    "title": "Quarto",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nquarto R package installed\nEmpty working directory"
+  },
+  {
+    "objectID": "R/quarto/quarto.html#create-content",
+    "href": "R/quarto/quarto.html#create-content",
+    "title": "Quarto",
+    "section": "Create Content",
+    "text": "Create Content\n\n1. Create quarto_R.qmd file\n---\ntitle: \"Quarto Document\"\nauthor: \"Roger Andre\"\ntoc: false\nformat:\n  html:\n    code-fold: true\n  pdf:\n    documentclass: scrreprt\n---\n### This is some markdown:\n\n* \"Hello, world!\"\n\n#### This is some R code\n```{r echo=FALSE}\nsummary(pressure)\n```\n\n```{r echo=FALSE}\nplot(pressure)\ntitle(\"Pressure Plot\")\n```\n\n\n2. Verify the file renders locally\nOpen the file in RStudio and select the Render option."
+  },
+  {
+    "objectID": "R/quarto/quarto.html#publish-content",
+    "href": "R/quarto/quarto.html#publish-content",
+    "title": "Quarto",
+    "section": "Publish Content",
+    "text": "Publish Content\n\n1. Verify Connect server is registered\nPress on the dropdown next to the “Publish” button and choose “Manage Accounts”.\n\n\n\n\n\nThis will bring up a window that shows what Connect servers you are registered to publishing to.\n\n\n\n\n\nIf the “Publishing Accounts” area is blank, follow the instructions in Connecting Your Account to register your Connect server to your IDE.\n\n\n2. Publish\nOnce you have verified that you have a Connect server available to publish to, press the blue “Publish” icon in the IDE and then the “Publish” button to publish to the selected server.\n\n\n\n\n\n\n\n3. Verify content deployment\nLook in the “Deploy” pane of the IDE. You should see “Completed deployed execution” at the bottom.\n[Connect] Completed deployed execution\nDocument successfully deployed to https://colorado.rstudio.com/rsc/content/ac07b562-6ef5-486d-98f9-adbd5551c215/\nDeployment completed: https://colorado.rstudio.com/rsc/connect/#/apps/ac07b562-6ef5-486d-98f9-adbd5551c215\n\n\n4. Verify that content runs on Connect\nThe Deployment completed link should look like this."
+  },
+  {
+    "objectID": "python/streamlit/streamlit.html",
+    "href": "python/streamlit/streamlit.html",
+    "title": "Streamlit",
+    "section": "",
+    "text": "streamlit Python package installed\nnumpy Python package installed\nrsconnect-python Python package installed\nEmpty working directory"
+  },
+  {
+    "objectID": "python/streamlit/streamlit.html#create-content",
+    "href": "python/streamlit/streamlit.html#create-content",
+    "title": "Streamlit",
+    "section": "Create Content",
+    "text": "Create Content\n\n1. Create app.py file\nimport streamlit as st\nimport numpy as np\nimport time\n\nprogress_bar = st.sidebar.progress(0)\nstatus_text = st.sidebar.empty()\nlast_rows = np.random.randn(1, 1)\nchart = st.line_chart(last_rows)\n\nfor i in range(1, 101):\n  new_rows = last_rows[-1, :] + np.random.randn(5, 1).cumsum(axis=0)\n  status_text.text(\"%i%% Complete\" % i)\n  chart.add_rows(new_rows)\n  progress_bar.progress(i)\n  last_rows = new_rows\n  time.sleep(0.05)\n\nprogress_bar.empty()\n\nst.button(\"Re-run\")\n\n\n2. Create requirements.txt file\nstreamlit\nnumpy\n\n\n3. Verify that content runs locally\nstreamlit run app.py"
+  },
+  {
+    "objectID": "python/streamlit/streamlit.html#register-connect-server",
+    "href": "python/streamlit/streamlit.html#register-connect-server",
+    "title": "Streamlit",
+    "section": "Register Connect Server",
+    "text": "Register Connect Server\n\n1. Get API key from Connect server\n\n\n\n\n\n\n\n2. Register API key and server with rsconnect-python\nrsconnect add --api-key <API_KEY> \\\n--server <CONNECT_SERVER_URL> \\\n--name <ALIAS>"
+  },
+  {
+    "objectID": "python/streamlit/streamlit.html#publish-content",
+    "href": "python/streamlit/streamlit.html#publish-content",
+    "title": "Streamlit",
+    "section": "Publish Content",
+    "text": "Publish Content\n\n1. Deploy content to Connect server\nrsconnect deploy streamlit . \\\n--title \"Streamlit Example\" -n <ALIAS>\nYou should see the following after a successful deployment.\n\nDeployment completed successfully.\nDashboard content URL: https://colorado.rstudio.com/rsc/connect/#/apps/dd3114d2-c845-475a-971a-738d4f3ea5e7\nDirect content URL: https://colorado.rstudio.com/rsc/content/dd3114d2-c845-475a-971a-738d4f3ea5e7/\n\n\n2. Verify that API is accessible on Connect\nGo to Direct content URL listed in Deployment pane. You should see the following."
+  },
+  {
+    "objectID": "python/dash/dash.html",
+    "href": "python/dash/dash.html",
+    "title": "Dash",
+    "section": "",
+    "text": "dash Python package installed\nplotly Python package installed\nEmpty working directory"
+  },
+  {
+    "objectID": "python/dash/dash.html#create-content",
+    "href": "python/dash/dash.html#create-content",
+    "title": "Dash",
+    "section": "Create Content",
+    "text": "Create Content\n\n1. Create app.py file\nimport dash\nfrom dash import dcc\nfrom dash import html\nfrom dash.dependencies import Input, Output\n\napp = dash.Dash('Dash Example')\n\ntext_style = dict(color='#444', fontFamily='sans-serif', fontWeight=300)\nplotly_figure = dict(data=[dict(x=[1,2,3], y=[2,4,8])])\n\napp.layout = html.Div([ \n        html.H2('Dash Example', style=text_style),\n        html.P('Enter a Plotly trace type into the text box, such as histogram, bar, or scatter.', style=text_style),\n        dcc.Input(id='text1', placeholder='scatter', value='scatter'),\n        dcc.Graph(id='plot1', figure=plotly_figure),\n    ])\n\n@app.callback(Output('plot1', 'figure'), [Input('text1', 'value')] )\ndef text_callback( text_input ):\n    return {'data': [dict(x=[1,2,3], y=[2,4,8], type=text_input)]}\n\nif __name__=='__main__':\n    app.run_server()\n\n\n2. Create requirements.txt file\ndash\nplotly\n\n\n3. Verify content runs locally\npython3 app.py\nYou should see:\nDash is running on http://127.0.0.1:8050/\n\n * Serving Flask app 'Dash Hello World'\n * Debug mode: off\nWARNING: This is a development server. \nDo not use it in a production deployment. \nUse a production WSGI server instead.\n * Running on http://127.0.0.1:8050\nPress CTRL+C to quit"
+  },
+  {
+    "objectID": "python/dash/dash.html#register-connect-server",
+    "href": "python/dash/dash.html#register-connect-server",
+    "title": "Dash",
+    "section": "Register Connect Server",
+    "text": "Register Connect Server\n\n1. Get API key from Connect server\n\n\n\n\n\n\n\n2. Register API key and server with rsconnect-python\nrsconnect add --api-key <API_KEY> \\\n--server <CONNECT_SERVER_URL> \\\n--name <ALIAS>"
+  },
+  {
+    "objectID": "python/dash/dash.html#publish-content",
+    "href": "python/dash/dash.html#publish-content",
+    "title": "Dash",
+    "section": "Publish Content",
+    "text": "Publish Content\n\n1. Deploy content to Connect server\nrsconnect deploy dash . \\\n--title \"Dash Example\" \\\n-n <ALIAS>\nYou should see the following after a successful deployment.\nLaunching Dash application...Deployment completed successfully.\nDashboard content URL: https://colorado.rstudio.com/rsc/connect/#/apps/dd3114d2-c845-475a-971a-738d4f3ea5e7\nDirect content URL: https://colorado.rstudio.com/rsc/content/dd3114d2-c845-475a-971a-738d4f3ea5e7/\n\n\n2. Verify that API is accessible on Connect\nGo to Direct content URL listed in Deployment pane. You should see the following."
+  },
+  {
+    "objectID": "python/flask/flask.html",
+    "href": "python/flask/flask.html",
+    "title": "Flask API",
+    "section": "",
+    "text": "flask Python package installed\nrsconnect-python Python package installed\nEmpty working directory"
+  },
+  {
+    "objectID": "python/flask/flask.html#create-content",
+    "href": "python/flask/flask.html#create-content",
+    "title": "Flask API",
+    "section": "Create Content",
+    "text": "Create Content\n\n1. Create app.py file\nfrom flask import Flask\nfrom flask import jsonify\n \napp = Flask(__name__)\n \n@app.route('/', methods=['GET'])\ndef hello_world():\n  return jsonify({'greeting':'Hello, World!'})\n \n# main driver function\nif __name__ == '__main__':\n \n  app.run()\n\n\n2. Create requirements.txt file\n(Only contains flask package name)\nflask\n\n\n3. Verify content runs locally\npython3 app.py\nYou should see:\n * Serving Flask app 'app'\n * Debug mode: off\nWARNING: This is a development server. \nDo not use it in a production deployment. \nUse a production WSGI server instead.\n * Running on http://127.0.0.1:5000\nAnd when you go to the URL, you will see the following JSON in the browser:\n{\"greeting\":\"Hello, World!\"}"
+  },
+  {
+    "objectID": "python/flask/flask.html#register-connect-server",
+    "href": "python/flask/flask.html#register-connect-server",
+    "title": "Flask API",
+    "section": "Register Connect Server",
+    "text": "Register Connect Server\n\n1. Get API key from Connect server\n\n\n\n\n\n\n\n2. Register API key and server with rsconnect-python\nrsconnect add --api-key <API_KEY> \\\n--server <CONNECT_SERVER_URL> \\\n--name <ALIAS>"
+  },
+  {
+    "objectID": "python/flask/flask.html#publish-content",
+    "href": "python/flask/flask.html#publish-content",
+    "title": "Flask API",
+    "section": "Publish Content",
+    "text": "Publish Content\n\n1. Deploy content to Connect server\nrsconnect deploy api . \\\n--title \"Flask Example\" -n <ALIAS>\nYou should see the following after a successful deployment.\nLaunching Python API...\nDeployment completed successfully.\nDashboard content URL: https://colorado.rstudio.com/rsc/connect/#/apps/dd3114d2-c845-475a-971a-738d4f3ea5e7\nDirect content URL: https://colorado.rstudio.com/rsc/content/dd3114d2-c845-475a-971a-738d4f3ea5e7/\n\n\n2. Verify that API is accessible on Connect\nIn python console:\n>>> import requests\n>>> requests.get(\"https://colorado.rstudio.com/rsc/content/dd3114d2-c845-475a-971a-738d4f3ea5e7\").json()\n{'greeting': 'Hello, World!'}"
+  },
+  {
+    "objectID": "python/fastapi/fastapi.html",
+    "href": "python/fastapi/fastapi.html",
+    "title": "FastAPI",
+    "section": "",
+    "text": "fastapi Python package installed\nrsconnect-python Python package installed\nEmpty working directory"
+  },
+  {
+    "objectID": "python/fastapi/fastapi.html#create-content",
+    "href": "python/fastapi/fastapi.html#create-content",
+    "title": "FastAPI",
+    "section": "Create Content",
+    "text": "Create Content\n\n1. Create app.py file\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello World\"}\n\n\n2. Create requirements.txt file\n(Only contains fastapi package.)\nfastapi\n\n\n3. Verify content runs locally\n$ uvicorn app:app --reload\nThis will start up a server, usually at the local address below.\nINFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)\nFollow that link and you should see the following JSON in the browser.\n{\"message\":\"Hello World\"}"
+  },
+  {
+    "objectID": "python/fastapi/fastapi.html#register-connect-server",
+    "href": "python/fastapi/fastapi.html#register-connect-server",
+    "title": "FastAPI",
+    "section": "Register Connect Server",
+    "text": "Register Connect Server\n\n1. Get API key from Connect server\n\n\n\n\n\n\n\n2. Register API key and server with rsconnect-python\nrsconnect add --api-key <API_KEY> \\\n--server <CONNECT_SERVER_URL> \\\n--name <ALIAS>"
+  },
+  {
+    "objectID": "python/fastapi/fastapi.html#publish-content",
+    "href": "python/fastapi/fastapi.html#publish-content",
+    "title": "FastAPI",
+    "section": "Publish Content",
+    "text": "Publish Content\n\n1. Deploy content to Connect server\n$ rsconnect deploy fastapi . --title \"FastAPI Example\" -n <ALIAS>\nYou should see the following after a successful deployment.\nLaunching FastAPI application...\nDeployment completed successfully.\n         Dashboard content URL: http://colorado.rstudio.com/connect/#/apps/9ae4830f-f86d-4fc6-b44f-bc0278b98553\n         Direct content URL: http://colorado.rstudio.com/content/9ae4830f-f86d-4fc6-b44f-bc0278b98553/\n\n\n2. Verify that API is accessible on Connect\nIn terminal window:\n$ curl -X 'GET' http://colorado.rstudio.com/content/9ae4830f-f86d-4fc6-b44f-bc0278b98553/ \\\n-H \"Authorization: Key <API_KEY>\"\nShould return:\n{\"message\":\"Hello World\"}"
+  },
+  {
+    "objectID": "python/bokeh/bokeh.html",
+    "href": "python/bokeh/bokeh.html",
+    "title": "Bokeh",
+    "section": "",
+    "text": "bokeh Python package installed\nrsconnect-python Python package installed\nEmpty working directory"
+  },
+  {
+    "objectID": "python/bokeh/bokeh.html#create-content",
+    "href": "python/bokeh/bokeh.html#create-content",
+    "title": "Bokeh",
+    "section": "Create Content",
+    "text": "Create Content\n\n1. Create app.py file\nfrom bokeh.models import ColumnDataSource\nfrom bokeh.plotting import figure\nfrom bokeh.io import curdoc\n\ndef plot_line():\n  doc = curdoc()\n\n  # prepare some data\n  x = [1, 2, 3, 4, 5]\n  y = [6, 7, 2, 4, 5]\n\n  # create a new plot with a title and axis labels\n  plot = figure(title=\"Simple line example\", x_axis_label=\"x\", y_axis_label=\"y\")\n\n  # add a line renderer with legend and line thickness\n  plot.line(x, y, legend_label=\"Temp.\", line_width=2)\n\n  doc.add_root(plot)\n  doc.title = \"Hello World\"\n\ndef main():\n    plot_line()\n\nmain()\n\n\n2. Create requirements.txt file\n(Only contains bokeh package.)\nbokeh\n\n\n3. Verify content runs locally\nbokeh serve --show app.py"
+  },
+  {
+    "objectID": "python/bokeh/bokeh.html#register-connect-server",
+    "href": "python/bokeh/bokeh.html#register-connect-server",
+    "title": "Bokeh",
+    "section": "Register Connect Server",
+    "text": "Register Connect Server\n\n1. Get API key from Connect server\n\n\n\n\n\n\n\n2. Register API key and server with rsconnect-python\nrsconnect add --api-key <API_KEY> \\\n--server <CONNECT_SERVER_URL> \\\n--name <ALIAS>"
+  },
+  {
+    "objectID": "python/bokeh/bokeh.html#publish-content",
+    "href": "python/bokeh/bokeh.html#publish-content",
+    "title": "Bokeh",
+    "section": "Publish Content",
+    "text": "Publish Content\n\n1. Deploy content to Connect server\nrsconnect deploy bokeh . \\\n--title \"Bokeh Example\" -n <ALIAS>\nYou should see the following after a successful deployment.\nLaunching Bokeh application...\nDeployment completed successfully.\nDashboard content URL: https://colorado.rstudio.com/rsc/connect/#/apps/dd3114d2-c845-475a-971a-738d4f3ea5e7\nDirect content URL: https://colorado.rstudio.com/rsc/content/dd3114d2-c845-475a-971a-738d4f3ea5e7/\n\n\n2. Verify that API is accessible on Connect\nGo to Direct content URL listed in Deployment pane. You should see the following."
+  },
+  {
+    "objectID": "python/shiny/shiny.html",
+    "href": "python/shiny/shiny.html",
+    "title": "Shiny (Python)",
+    "section": "",
+    "text": "shiny Python package installed\nrsconnect-python Python package installed\nEmpty working directory"
+  },
+  {
+    "objectID": "python/shiny/shiny.html#create-content",
+    "href": "python/shiny/shiny.html#create-content",
+    "title": "Shiny (Python)",
+    "section": "Create Content",
+    "text": "Create Content\n\n1. Create app.py file in text editor.\nfrom shiny import App, render, ui\n\napp_ui = ui.page_fluid(\n    ui.input_slider(\"n\", \"N\", 0, 100, 20),\n    ui.output_text_verbatim(\"txt\"),\n)\n\ndef server(input, output, session):\n    @output\n    @render.text\n    def txt():\n        return f\"n*2 is {input.n() * 2}\"\n\napp = App(app_ui, server)\n\n\nif __name__ == \"__main__\":\n    app.run()\n\n\n2. Create requirements.txt file\n(Only contains shiny package.)\nshiny"
+  },
+  {
+    "objectID": "python/shiny/shiny.html#register-connect-server",
+    "href": "python/shiny/shiny.html#register-connect-server",
+    "title": "Shiny (Python)",
+    "section": "Register Connect Server",
+    "text": "Register Connect Server\n\n1. Get API key from Connect server\n\n\n\n\n\n\n\n2. Register API key and server with rsconnect-python\nrsconnect add --api-key <API_KEY> \\\n--server <CONNECT_SERVER_URL> \\\n--name <ALIAS>"
+  },
+  {
+    "objectID": "python/shiny/shiny.html#publish-content",
+    "href": "python/shiny/shiny.html#publish-content",
+    "title": "Shiny (Python)",
+    "section": "Publish Content",
+    "text": "Publish Content\n\n1. Deploy content to Connect server\nrsconnect deploy shiny . --title \"Shiny Python Example\" -n <ALIAS>\nYou should see the following after a successful deployment.\nLaunching Python Shiny application...\nDeployment completed successfully.\n         Dashboard content URL: http://colorado.rstudio.com/connect/#/apps/65db651f-937d-4e50-b299-de14893d63b4\n         Direct content URL: http://colorado.rstudio.com/content/65db651f-937d-4e50-b299-de14893d63b4/\n\n\n2. Verify that API is accessible on Connect\nGo to Dashboard content URL listed in Deployment pane. You should see the following."
+  },
+  {
+    "objectID": "python/quarto/quarto_p.html",
+    "href": "python/quarto/quarto_p.html",
+    "title": "Quarto (Python)",
+    "section": "",
+    "text": "Quarto documents can be created in a text editor and published with the rsconnect python package. If you would like to preview them, follow the instructions in quarto docs to install them locally."
+  },
+  {
+    "objectID": "python/quarto/quarto_p.html#prerequisites",
+    "href": "python/quarto/quarto_p.html#prerequisites",
+    "title": "Quarto (Python)",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nrsconnect Python package installed\nEmpty working directory"
+  },
+  {
+    "objectID": "python/quarto/quarto_p.html#create-content",
+    "href": "python/quarto/quarto_p.html#create-content",
+    "title": "Quarto (Python)",
+    "section": "Create Content",
+    "text": "Create Content\n\n1. Create qmd_sample.qmd file\n---\ntitle: \"Quarto Document\"\nauthor: \"Roger Andre\"\ntoc: false\nformat:\n  html:\n    code-fold: true\n---\n### This is some markdown:\n\n* \"Hello, world!\"\n\n### Below is some in-line Python code:\n\n```{python}\n#| label: fig-polar\n#| fig-cap: \"A line plot on a polar axis\"\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n\n\n2. Create requirements.txt file\nnumpy\nmatplotlib"
+  },
+  {
+    "objectID": "python/quarto/quarto_p.html#register-connect-server",
+    "href": "python/quarto/quarto_p.html#register-connect-server",
+    "title": "Quarto (Python)",
+    "section": "Register Connect Server",
+    "text": "Register Connect Server\n\n1. Get API key from Connect server\n\n\n\n\n\n\n\n2. Register API key and server with rsconnect-python\nIn terminal:\n$ rsconnect add --api-key <API_KEY> \\\n--server <CONNECT_SERVER_URL> \\\n--name <ALIAS>"
+  },
+  {
+    "objectID": "python/quarto/quarto_p.html#publish-content",
+    "href": "python/quarto/quarto_p.html#publish-content",
+    "title": "Quarto (Python)",
+    "section": "Publish Content",
+    "text": "Publish Content\n\n1. Deploy content to Connect server\nIn terminal:\n$ rsconnect deploy quarto quarto_sample.qmd \\\n--title \"Quarto Python Example\" -n <ALIAS>\nYou should see the following after a successful deployment.\nCompleted deployed execution\nDeployment completed successfully.\n         Dashboard content URL: http://colorado.rstudio.com/connect/#/apps/f591f348-4f23-4405-94da-da34e86551cd\n         Direct content URL: http://colorado.rstudio.com/content/f591f348-4f23-4405-94da-da34e86551cd/\n\n\n2. Verify that API is accessible on Connect\nThe Dashboard content link should look like this."
+  },
+  {
+    "objectID": "python/pins/pins.html",
+    "href": "python/pins/pins.html",
+    "title": "Pins (Python)",
+    "section": "",
+    "text": "pins Python package installed\nrsconnect-python Python package installed\nEmpty working directory"
+  },
+  {
+    "objectID": "python/pins/pins.html#get-api-key-from-connect-server",
+    "href": "python/pins/pins.html#get-api-key-from-connect-server",
+    "title": "Pins (Python)",
+    "section": "Get API key from Connect server",
+    "text": "Get API key from Connect server"
+  },
+  {
+    "objectID": "python/pins/pins.html#create-content",
+    "href": "python/pins/pins.html#create-content",
+    "title": "Pins (Python)",
+    "section": "Create Content",
+    "text": "Create Content\n\nCreate mtcars_pin.py file in text editor.\nimport os\nimport pins\nfrom pins import board_rsconnect\nfrom pins.data import mtcars\n\n# Instantiate Pin board on server\nboard = board_rsconnect(server_url = \"<CONNECT_SERVER_URL>\", \n  api_key = \"<API_KEY>\")\n\n# \"Pin\" data to board\nboard.pin_write(mtcars, \n  name=\"randre/python_mtcars_data\", \n  title=\"Python Pin Example\", \n  type=\"csv\")"
+  },
+  {
+    "objectID": "python/pins/pins.html#publish-content",
+    "href": "python/pins/pins.html#publish-content",
+    "title": "Pins (Python)",
+    "section": "Publish Content",
+    "text": "Publish Content\nExecute mtcars_pin.py python script.\n$ python3 mtcars_pin.py \nWriting pin:\nName: 'randre/python_mtcars_data'\nVersion: 20221017T213729Z-3b134"
+  },
+  {
+    "objectID": "python/pins/pins.html#verify-that-content-is-accessible",
+    "href": "python/pins/pins.html#verify-that-content-is-accessible",
+    "title": "Pins (Python)",
+    "section": "Verify that content is accessible",
+    "text": "Verify that content is accessible\nGo to Connect server Content listing. You should see a piece of content with the title “Python Pin Example”.\n\n\n\n\n\nClick on that content. You should see the following."
+  },
+  {
+    "objectID": "python/jupyter/ipynb.html",
+    "href": "python/jupyter/ipynb.html",
+    "title": "Jupyter Notebook",
+    "section": "",
+    "text": "jupyter Python package installed\nrsconnect-python Python package installed\nEmpty working directory"
+  },
+  {
+    "objectID": "python/jupyter/ipynb.html#create-content",
+    "href": "python/jupyter/ipynb.html#create-content",
+    "title": "Jupyter Notebook",
+    "section": "Create Content",
+    "text": "Create Content\n\n1. Create Hello_World.ipynb file in text editor.\n{\n \"cells\": [{\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\"# Hello World!\\n\"]\n  }],\n \"metadata\": {},\n \"nbformat\": 4,\n \"nbformat_minor\": 2\n}\n\n\n2. Create requirements.txt file\n(Only contains jupyter package.)\njupyter"
+  },
+  {
+    "objectID": "python/jupyter/ipynb.html#register-connect-server",
+    "href": "python/jupyter/ipynb.html#register-connect-server",
+    "title": "Jupyter Notebook",
+    "section": "Register Connect Server",
+    "text": "Register Connect Server\n\n1. Get API key from Connect server\n\n\n\n\n\n\n\n2. Register API key and server with rsconnect-python\nrsconnect add --api-key <API_KEY> \\\n--server <CONNECT_SERVER_URL> \\\n--name <ALIAS>"
+  },
+  {
+    "objectID": "python/jupyter/ipynb.html#publish-content",
+    "href": "python/jupyter/ipynb.html#publish-content",
+    "title": "Jupyter Notebook",
+    "section": "Publish Content",
+    "text": "Publish Content\n\n1. Deploy content to Connect server\nrsconnect deploy notebook Hello_World.ipynb \\\n--title \"Jupyter Example\" -n <ALIAS>\nYou should see the following after a successful deployment.\nCompleted deployed execution\nDeployment completed successfully.\n     Dashboard content URL: http://colorado.rstudio.com/connect/#/apps/4185cfa8-5a5a-4690-8b67-ca4ee9bf72e6\n     Direct content URL: http://colorado.rstudio.com/content/4185cfa8-5a5a-4690-8b67-ca4ee9bf72e6/\n\n\n2. Verify that API is accessible on Connect\nGo to Dashboard content URL listed in Deployment pane. You should see the following."
+  }
+]
